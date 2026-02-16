@@ -238,3 +238,44 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 10px; }
+
+/* --- PAGE 1 VERTICAL LAYOUT --- */
+
+/* Nama Mempelai Vertikal */
+.mempelai-vertical-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.nama-vertical {
+    font-family: var(--font-heading);
+    font-size: 6rem; /* Ukuran Besar */
+    font-weight: 600;
+    line-height: 0.9;
+    color: var(--green);
+    margin: 0;
+    font-style: italic;
+    letter-spacing: -2px; /* Rapat biar estetik */
+}
+
+.ampersand-vertical {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    color: var(--gold); /* Aksen Emas */
+    margin: 15px 0; /* Jarak Atas Bawah simbol & */
+    opacity: 0.8;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 576px) {
+    .nama-vertical {
+        font-size: 4.5rem; /* Ukuran pas di HP */
+    }
+    .ampersand-vertical {
+        font-size: 2.5rem;
+        margin: 10px 0;
+    }
+}
