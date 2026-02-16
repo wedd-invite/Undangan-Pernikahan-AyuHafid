@@ -1,308 +1,145 @@
-/* --- 1. VARIABEL WARNA --- */
+/* --- GLOBAL VARIABLES --- */
 :root {
-    --warna-cream: #faf3dd;    /* Cream Terang */
-    --warna-hijau: #5b6946;    /* Hijau Sage Gelap */
-    --warna-teks-gelap: #4A4A4A; 
+    --cream: #faf3dd;
+    --green: #5b6946;
+    --dark-green: #3e4a30;
 }
 
 body {
     font-family: 'Work Sans', sans-serif;
-    background-color: var(--warna-cream);
-    color: var(--warna-teks-gelap);
     overflow-x: hidden;
 }
 
-/* Font Estetik */
+/* --- UTILITIES --- */
+.bg-cream { background-color: var(--cream); }
+.bg-green { background-color: var(--green); }
+.text-cream { color: var(--cream); }
+.text-green { color: var(--green); }
+
 .font-aesthetic {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
 }
 
-/* --- 2. HERO SECTION (SPLIT COLOR) --- */
-.hero-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    transition: transform 1s ease-in-out;
+.font-script {
+    font-family: 'Great Vibes', cursive; /* Font sambung cantik */
 }
 
-/* Bagian Atas (Cream) - 60% Tinggi Layar */
-.hero-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    transition: transform 1s ease-in-out;
-}
-
-/* --- BAGIAN ATAS (Background Cream, Teks Hijau) --- */
-.hero-top {
-    height: 65%; /* Sedikit diperluas biar lega */
-    background-color: var(--warna-cream);
-    color: var(--warna-hijau); /* Warna Teks Hijau Gelap */
-    position: relative;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.text-tracking-top {
-    letter-spacing: 4px;
+.letter-spacing-small {
+    letter-spacing: 3px;
     font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
 }
 
-.inisial-huruf {
-    font-family: 'Playfair Display', serif;
-    font-size: 7rem; /* INISIAL LEBIH BESAR */
-    line-height: 1;
-    font-weight: 700;
-    color: var(--warna-hijau); /* Pastikan Hijau */
-}
-
-/* Miringkan Bunga */
-.bunga-tengah {
-    width: 70px; 
-    height: auto;
-    object-fit: contain;
-    transform: rotate(15deg); /* INI AGAR MIRING */
-    margin-top: 10px;
-}
-
-.nama-lengkap-hero {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    color: var(--warna-hijau);
-}
-
-.tanggal-hero {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 0.9rem;
-    border-top: 1px solid var(--warna-hijau);
-    border-bottom: 1px solid var(--warna-hijau);
-    padding: 5px 15px;
-    display: inline-block;
-}
-
-/* Bagian Bawah (Hijau) - 40% Tinggi Layar */
-.hero-bottom {
-    height: 35%;
-    background-color: var(--warna-hijau);
-    color: var(--warna-cream); /* Warna Teks Cream Terang */
-    border-top-left-radius: 50px; /* Lengkungan lebih halus */
-    border-top-right-radius: 50px;
-    box-shadow: 0px -10px 30px rgba(0,0,0,0.15); /* Bayangan naik ke atas */
-    position: relative;
-    top: -30px; /* Tarik sedikit ke atas agar menumpuk cantik */
-}
-
-.salam-pembuka {
-    font-size: 0.9rem;
-    font-weight: 300;
-    opacity: 0.9;
-    color: var(--warna-cream);
-}
-
-.nama-tamu {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #ffffff; /* Putih agar paling menonjol */
-    text-transform: capitalize;
-    margin: 0;
-}
-
-.tamu-wrapper {
-    background: rgba(255,255,255,0.1); /* Kotak transparan tipis */
-    padding: 10px 20px;
-    border-radius: 10px;
-    display: inline-block;
-    min-width: 200px;
-}
-
-.kalimat-undangan {
-    font-size: 0.8rem;
-    max-width: 80%;
-    margin: 0 auto;
-    line-height: 1.4;
-    color: var(--warna-cream);
-    opacity: 0.8;
-}
-
-/* Tombol Buka Undangan */
-.btn-custom-cream {
-    background-color: var(--warna-cream);
-    color: var(--warna-hijau);
-    border: 1px solid var(--warna-cream);
-    font-weight: 600;
-    padding: 10px 30px;
-    border-radius: 50px;
-    transition: all 0.3s;
-}
-
-.btn-custom-cream:hover {
-    background-color: transparent;
-    color: var(--warna-cream); /* Jadi teks cream, background transparan */
-    border: 1px solid var(--warna-cream);
-    transform: translateY(-2px);
-}
-
-/* Responsif untuk HP Kecil */
-@media (max-width: 400px) {
-    .inisial-huruf { font-size: 5rem; }
-    .bunga-tengah { width: 50px; }
-    .nama-tamu { font-size: 1.5rem; }
-    .hero-top { height: 60%; }
-    .hero-bottom { height: 40%; top: -20px; }
-}
-
-/* --- 3. CUSTOM BUTTONS --- */
-.btn-custom-cream {
-    background-color: var(--warna-cream);
-    color: var(--warna-hijau);
-    border: none;
-    font-weight: 600;
-    padding: 10px 25px;
-    border-radius: 50px;
-    transition: all 0.3s;
-}
-
-.btn-custom-cream:hover {
-    background-color: #e6dec5;
-    transform: scale(1.05);
-}
-
-.btn-custom-green {
-    background-color: var(--warna-hijau);
-    color: white;
-    border: none;
-}
-
-.btn-custom-green:hover {
-    background-color: #4a573a;
-    color: white;
-}
-
-.btn-outline-custom {
-    color: var(--warna-hijau);
-    border-color: var(--warna-hijau);
-}
-
-.btn-outline-custom:hover {
-    background-color: var(--warna-hijau);
-    color: white;
-}
-
-/* --- 4. KONTEN UTAMA --- */
-.mempelai {
-    background-color: var(--warna-cream);
+/* --- PAGE 1: HERO --- */
+.display-1 {
+    font-size: 4rem; /* Ukuran Nama Besar */
 }
 
 .ampersand {
-    font-size: 4rem;
-    color: var(--warna-hijau);
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 0.7em; /* Sedikit lebih kecil dari nama */
 }
 
-/* Section Acara (Warna Hijau) */
-.acara {
-    background-color: var(--warna-hijau);
-    color: white;
-}
-
-.text-cream {
-    color: var(--warna-cream);
-}
-
-.card-acara {
-    background-color: rgba(255, 255, 255, 0.95); /* Putih transparan */
-    color: var(--warna-teks-gelap);
-    border: none;
-    border-radius: 15px;
-}
-
-.divider {
-    width: 50px;
-    height: 3px;
-    background-color: var(--warna-hijau);
-    opacity: 1;
-    margin: 15px auto;
-}
-
-/* Footer */
-.footer-custom {
-    background-color: #3e4a30; /* Hijau lebih gelap dikit */
-}
-
-/* Floating Music Button */
-#audio-container button {
-    width: 50px;
-    height: 50px;
-    color: var(--warna-hijau);
-}
-
-/* Responsif untuk HP Kecil */
-@media (max-height: 600px) {
-    .hero-top { height: 50%; }
-    .hero-bottom { height: 50%; }
-    .inisial-huruf { font-size: 3.5rem; }
-    .bunga-tengah { width: 50px; }
-}
-
-/* --- 5. COUNTDOWN TIMER (MOBILE OPTIMIZED) --- */
-#countdown {
-    flex-wrap: wrap; /* Agar aman di HP layar sangat kecil */
-}
-
+/* Countdown Styles */
 .time-box {
-    background-color: var(--warna-cream); /* Kotak Cream */
-    color: var(--warna-hijau);            /* Teks Hijau */
-    width: 75px;        /* Lebar fix agar rapi */
-    height: 75px;       /* Tinggi fix agar kotak */
-    border-radius: 15px;
+    background-color: var(--green);
+    color: var(--cream);
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
-}
-
-/* Efek saat disentuh/hover */
-.time-box:hover {
-    transform: translateY(-5px); 
-    background-color: #ffffff;
 }
 
 .time-number {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 1.8rem; /* Angka besar */
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 1;
 }
 
 .time-label {
-    font-size: 0.7rem; /* Label kecil */
+    font-size: 0.6rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 2px;
 }
 
-/* Penyesuaian Khusus HP Kecil (misal iPhone SE) */
-@media (max-width: 380px) {
-    .time-box {
-        width: 65px;
-        height: 65px;
-    }
-    .time-number {
-        font-size: 1.5rem;
-    }
+/* Buttons */
+.btn-outline-green {
+    color: var(--green);
+    border-color: var(--green);
+}
+.btn-outline-green:hover {
+    background-color: var(--green);
+    color: var(--cream);
+}
+
+/* --- PAGE 3: MEMPELAI (ARCH EFFECT) --- */
+.arch-frame {
+    width: 220px;
+    height: 300px;
+    position: relative;
+    border-top-left-radius: 110px; /* Membuat lengkungan atas (setengah lebar) */
+    border-top-right-radius: 110px;
+    overflow: visible; /* Biar tulisan miring bisa keluar dikit */
+    border: 3px solid var(--green); /* Garis bingkai */
+    padding: 5px; /* Jarak bingkai ke foto */
+}
+
+.mempelai-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 105px; /* Foto mengikuti bingkai */
+    border-top-right-radius: 105px;
+    filter: sepia(20%); /* Efek warna sedikit vintage */
+}
+
+/* Tulisan Miring "The Bride" */
+.label-miring {
+    position: absolute;
+    bottom: 20px;
+    right: -20px; /* Keluar ke kanan */
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--green);
+    background-color: var(--cream); /* Latar belakang biar teks terbaca */
+    padding: 0 10px;
+    transform: rotate(-10deg); /* Miring ke kiri atas */
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.divider-small {
+    width: 50px;
+    height: 2px;
+    background-color: var(--green);
+    opacity: 1;
+}
+
+/* --- PAGE 4: KARTU ACARA --- */
+.card-acara {
+    max-width: 500px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--cream); /* Kartu Cream di atas BG Hijau */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 400px) {
+    .display-1 { font-size: 3rem; }
+    .arch-frame { width: 180px; height: 250px; border-top-left-radius: 90px; border-top-right-radius: 90px;}
+    .mempelai-img { border-top-left-radius: 85px; border-top-right-radius: 85px; }
+    .label-miring { font-size: 2rem; right: -10px; }
+}
+
+/* Floating Music */
+#audio-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+#audio-container button {
+    width: 50px; height: 50px; color: var(--green);
 }

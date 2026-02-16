@@ -31,22 +31,20 @@ const audioContainer = document.getElementById("audio-container");
 const audioBtn = document.getElementById("audio-btn");
 const audioIcon = document.querySelector(".fa-compact-disc");
 
+// GANTI FUNGSI INI SAJA
 function bukaUndangan() {
-    // 1. Geser layar cover ke atas
-    hero.style.transform = "translateY(-100%)";
-    hero.style.transition = "transform 1s ease-in-out";
+    const mainContent = document.getElementById("main-content");
+    const page2 = document.getElementById("page-2");
     
-    // 2. Munculkan konten utama
+    // 1. Munculkan konten halaman 2, 3, 4
     mainContent.style.display = "block";
     
-    // 3. Putar Musik
+    // 2. Putar Musik
     audio.play();
-    audioContainer.style.display = "block"; // Munculkan tombol musik
+    document.getElementById("audio-container").style.display = "block";
     
-    // 4. Mulai scroll otomatis sedikit biar smooth (opsional)
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 1000);
+    // 3. Scroll halus ke Halaman 2
+    page2.scrollIntoView({ behavior: 'smooth' });
 }
 
 // Kontrol Tombol Musik (Pause/Play)
