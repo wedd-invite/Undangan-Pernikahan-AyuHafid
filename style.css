@@ -293,3 +293,40 @@ body {
         margin: 10px 0;
     }
 }
+
+/* Animasi Muncul dari Bawah */
+.animate-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+/* Animasi Zoom In */
+.animate-zoom {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 1s ease-out;
+}
+
+/* Class pembantu saat elemen aktif (akan dipicu JS atau saat scroll) */
+.appear {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.delay-1 { transition-delay: 0.3s; }
+.delay-2 { transition-delay: 0.6s; }
+
+#audio-container {
+    position: fixed;
+    bottom: 80px; /* Di atas navbar bottom */
+    right: 20px;
+    z-index: 999;
+}
+#audio-btn {
+    width: 45px;
+    height: 45px;
+    background: var(--green);
+    color: var(--cream);
+    border: none;
+}

@@ -76,6 +76,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 pesan: form.pesan.value
             };
 
+            if(data.nama.trim().length <3) {
+                alert("Mohon Masukkan Nama Lengkap.");
+            }
+
+            if(data.jumlah<1) {
+                alert("Jumlah Tamu Minimal adalah 1 Orang.");
+            }
+
+            btnKirim.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            btnKirim.disabled = true;
+
             fetch(scriptURL, {
                 method: 'POST',
                 body: JSON.stringify(data),
@@ -173,7 +184,7 @@ function loadUcapan() {
     
     // Cek apakah URL sudah diisi
     if (!scriptURL || scriptURL.includes('AKfycbzVWcnpNx')) {
-        daftarUcapan.innerHTML = '<p class="text-center text-danger small">Error: URL Google Script belum diganti!</p>';
+        daftarUcapan.innerHTML = '<p class="text-center text-danger small">Gagal Memuat Ucapan!</p>';
         return;
     }
 
