@@ -32,54 +32,138 @@ body {
 }
 
 /* Bagian Atas (Cream) - 60% Tinggi Layar */
-.hero-top {
-    height: 60%;
-    background-color: var(--warna-cream);
-    color: var(--warna-hijau);
-    position: relative;
+.hero-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s ease-in-out;
 }
 
-.inisial-box {
+/* --- BAGIAN ATAS (Background Cream, Teks Hijau) --- */
+.hero-top {
+    height: 65%; /* Sedikit diperluas biar lega */
+    background-color: var(--warna-cream);
+    color: var(--warna-hijau); /* Warna Teks Hijau Gelap */
     position: relative;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.text-tracking-top {
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .inisial-huruf {
     font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    font-weight: bold;
-    color: var(--warna-hijau);
+    font-size: 7rem; /* INISIAL LEBIH BESAR */
+    line-height: 1;
+    font-weight: 700;
+    color: var(--warna-hijau); /* Pastikan Hijau */
 }
 
-/* Pengaturan Gambar Bunga */
+/* Miringkan Bunga */
 .bunga-tengah {
-    width: 80px; /* Atur ukuran bunga di sini */
+    width: 70px; 
     height: auto;
     object-fit: contain;
+    transform: rotate(15deg); /* INI AGAR MIRING */
+    margin-top: 10px;
 }
 
-.text-dark-green {
+.nama-lengkap-hero {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
     color: var(--warna-hijau);
-    letter-spacing: 3px;
+}
+
+.tanggal-hero {
+    font-family: 'Work Sans', sans-serif;
     font-size: 0.9rem;
-    font-weight: 600;
+    border-top: 1px solid var(--warna-hijau);
+    border-bottom: 1px solid var(--warna-hijau);
+    padding: 5px 15px;
+    display: inline-block;
 }
 
 /* Bagian Bawah (Hijau) - 40% Tinggi Layar */
 .hero-bottom {
-    height: 40%;
+    height: 35%;
     background-color: var(--warna-hijau);
+    color: var(--warna-cream); /* Warna Teks Cream Terang */
+    border-top-left-radius: 50px; /* Lengkungan lebih halus */
+    border-top-right-radius: 50px;
+    box-shadow: 0px -10px 30px rgba(0,0,0,0.15); /* Bayangan naik ke atas */
+    position: relative;
+    top: -30px; /* Tarik sedikit ke atas agar menumpuk cantik */
+}
+
+.salam-pembuka {
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.9;
     color: var(--warna-cream);
-    border-top-left-radius: 40px; /* Lengkungan cantik di perbatasan */
-    border-top-right-radius: 40px;
-    box-shadow: 0px -5px 20px rgba(0,0,0,0.1);
 }
 
 .nama-tamu {
     font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    font-size: 2rem;
-    margin: 10px 0;
-    color: #ffffff; /* Putih biar kontras di hijau */
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #ffffff; /* Putih agar paling menonjol */
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.tamu-wrapper {
+    background: rgba(255,255,255,0.1); /* Kotak transparan tipis */
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.kalimat-undangan {
+    font-size: 0.8rem;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.4;
+    color: var(--warna-cream);
+    opacity: 0.8;
+}
+
+/* Tombol Buka Undangan */
+.btn-custom-cream {
+    background-color: var(--warna-cream);
+    color: var(--warna-hijau);
+    border: 1px solid var(--warna-cream);
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.btn-custom-cream:hover {
+    background-color: transparent;
+    color: var(--warna-cream); /* Jadi teks cream, background transparan */
+    border: 1px solid var(--warna-cream);
+    transform: translateY(-2px);
+}
+
+/* Responsif untuk HP Kecil */
+@media (max-width: 400px) {
+    .inisial-huruf { font-size: 5rem; }
+    .bunga-tengah { width: 50px; }
+    .nama-tamu { font-size: 1.5rem; }
+    .hero-top { height: 60%; }
+    .hero-bottom { height: 40%; top: -20px; }
 }
 
 /* --- 3. CUSTOM BUTTONS --- */
