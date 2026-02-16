@@ -2,7 +2,7 @@
 // 1. KONFIGURASI UTAMA
 // =============================================================================
 // URL Google Apps Script (Jangan diubah jika sudah benar)
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwaBetLsTkXnscqpT7NheTnm_ciN9j4btTfZ_ladmo2g2fcoeTSwuqpkncd35ChtyS0JA/exec'; 
+const scriptURL = 'https://script.google.com/macros/s/AKfycby1PBsKvOYagze-tXkzNPLSLC3AxGVtJyXxNAe3e1wT2Q60z8oUqnrX7RpWiL5fnP4Ehw/exec'; 
 
 // Tanggal Acara: Tahun, Bulan (Jan=0, Apr=3), Tanggal, Jam, Menit, Detik
 // Target: 04 April 2026, Jam 08:00
