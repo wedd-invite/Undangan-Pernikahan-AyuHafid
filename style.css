@@ -52,82 +52,125 @@ body {
     .ornamen-pojok-kiri-atas, .ornamen-pojok-kanan-atas { width: 110px; }
 }
 
-/* --- HERO SECTION --- */
+/* HERO SECTION */
+
 .hero-container {
     height: 100vh;
-    background-color: var(--cream);
-    display: flex; flex-direction: column; justify-content: space-between;
-    position: relative; overflow: hidden;
+    background: radial-gradient(circle at center, #FAF7F0 0%, #EBE5D5 100%);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    position: relative; 
+    overflow: hidden;
 }
-.hero-content { flex-grow: 1; z-index: 2; position: relative; }
 
-/* Box utama inisial */
-/* --- INISIAL HERO (REVISI ELEGAN) --- */
+.hero-content { 
+    flex-grow: 1; 
+    z-index: 2; 
+    position: relative; 
+    /* Membuat konten tersebar merata agar mengisi ruang kosong */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding-bottom: 50px; /* Memberi jarak agar tidak menabrak kotak bawah */
+}
+
+/* 1. Teks "The Wedding Of" Lebih Jelas */
+.text-tracking-top {
+    letter-spacing: 6px;
+    font-size: 1.1rem; /* Diperbesar dari 0.75rem */
+    font-weight: 600;
+    color: var(--green);
+    opacity: 0.9;
+    margin-bottom: 2rem !important; /* Jarak ke inisial lebih jauh */
+}
+
+/* 2. Inisial RAKSASA & MEWAH */
 .inisial-box { 
     position: relative; 
-    height: 180px; 
+    height: 250px; /* Area inisial dipertinggi */
     width: 100%;
-    max-width: 400px;
+    max-width: 600px; /* Diperlebar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .inisial-huruf {
     font-family: var(--font-heading); 
-    font-size: 7rem; /* Ukuran pas, tidak terlalu raksasa */
-    line-height: 1;
+    font-size: 11rem; /* DIPERBESAR (Sebelumnya 7.5rem) */
+    line-height: 0.8;
     color: var(--green); 
     z-index: 1;
     position: relative;
-    text-shadow: 2px 2px 5px rgba(74, 86, 58, 0.1); /* Shadow halus */
+    text-shadow: 4px 4px 0px rgba(197, 160, 89, 0.2); 
 }
 
-/* Huruf A (Kiri) - Naik Sedikit */
+/* Mengatur posisi naik-turun agar lebih drastis */
 .huruf-kiri {
-    transform: translateY(-25px); /* Geser ke atas */
-    margin-right: -20px; /* Rapatkan ke bunga */
+    transform: translateY(-50px); /* Naik lebih tinggi */
+    margin-right: -40px;          /* Lebih nempel ke bunga */
 }
 
-/* Huruf H (Kanan) - Turun Sedikit */
 .huruf-kanan {
-    transform: translateY(28px); /* Geser ke bawah */
-    margin-left: -12px; /* Rapatkan ke bunga */
+    transform: translateY(50px);  /* Turun lebih rendah */
+    margin-left: -40px; 
 }
 
 .bunga-tengah {
-    width: 110px; 
+    width: 200px; /* DIPERBESAR (Sebelumnya 120px) */
     z-index: 2;
-    filter: drop-shadow(0 5px 15px rgba(250, 247, 240, 0.8)); /* Glow cream di belakang bunga */
-    transform: rotate(5deg); /* Miring dikit biar natural */
+    filter: drop-shadow(0 15px 30px rgba(74, 86, 58, 0.25));
+    transform: rotate(5deg);
 }
 
-/* Tambahkan ini untuk memastikan Hero Content punya ruang */
-.hero-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    z-index: 5;
-}
-
+/* 3. Nama Mempelai Lebih Besar */
 .nama-lengkap-hero {
-    font-family: var(--font-heading); font-size: 2.2rem;
-    font-style: italic; color: var(--green);
-}
-.tanggal-hero {
-    border-top: 1px solid var(--green); border-bottom: 1px solid var(--green);
-    padding: 5px 20px; font-size: 0.9rem; letter-spacing: 2px;
+    font-family: var(--font-heading); 
+    font-size: 4rem; /* DIPERBESAR (Sebelumnya 2.5rem) */
+    font-style: italic; 
+    color: var(--green);
+    letter-spacing: -1px;
+    margin-top: 3rem !important; /* Jarak dari inisial */
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
-/* Glass Effect diganti jadi Cream Transparan */
+/* 4. Tanggal */
+.tanggal-hero {
+    border-top: 2px solid var(--green);    /* Garis lebih tebal */
+    border-bottom: 2px solid var(--green);
+    padding: 10px 40px; 
+    font-size: 1.1rem; /* Diperbesar */
+    letter-spacing: 5px; 
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+}
+
+/* 5. Kotak Bawah (Glass) */
 .content-box.glass-effect {
-    background: rgba(250, 247, 240, 0.85); /* Cream Transparan */
-    backdrop-filter: blur(12px);
-    border-radius: 25px 25px 0 0;
-    width: 100%; max-width: 500px;
-    box-shadow: 0 -10px 40px rgba(74, 86, 58, 0.1);
-    border-top: 1px solid rgba(255,255,255,0.2);
+    background: rgba(250, 247, 240, 0.75); 
+    backdrop-filter: blur(20px);          
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 40px 40px 0 0; /* Lengkungan lebih besar */
+    width: 100%; 
+    max-width: 600px; /* Kotak lebih lebar */
+    box-shadow: 0 -20px 60px rgba(74, 86, 58, 0.2); 
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 2.5rem !important; /* Padding dalam lebih lega */
+}
+
+/* --- RESPONSIVE (Agar tidak pecah di HP Kecil) --- */
+@media (max-width: 576px) {
+    .inisial-huruf { font-size: 7rem; }
+    .bunga-tengah { width: 140px; }
+    .huruf-kiri { transform: translateY(-30px); margin-right: -25px; }
+    .huruf-kanan { transform: translateY(30px); margin-left: -25px; }
+    .nama-lengkap-hero { font-size: 2.5rem; margin-top: 2rem !important; }
+    .tanggal-hero { font-size: 0.9rem; padding: 8px 20px; }
+    .content-box.glass-effect { padding: 1.5rem !important; }
 }
 
 /* --- BUTTONS --- */
