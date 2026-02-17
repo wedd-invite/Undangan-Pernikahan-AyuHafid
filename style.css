@@ -356,18 +356,31 @@ body {
 .delay-1 { transition-delay: 0.3s; }
 .delay-2 { transition-delay: 0.6s; }
 
+/* --- POSISI TOMBOL MUSIK (LEBIH POJOK) --- */
 #audio-container {
     position: fixed;
-    bottom: 80px; /* Di atas navbar bottom */
-    right: 20px;
-    z-index: 999;
+    bottom: 15px;  /* Jarak dari Bawah (Semakin kecil makin mepet bawah) */
+    right: 15px;   /* Jarak dari Kanan (Semakin kecil makin mepet kanan) */
+    z-index: 9999; /* Pastikan selalu di atas elemen lain */
 }
+
+/* Mempercantik Tombolnya */
 #audio-btn {
-    width: 45px;
+    width: 45px;       /* Ukuran lingkaran */
     height: 45px;
-    background: var(--green);
-    color: var(--cream);
-    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--cream); /* Warna dasar Cream */
+    color: var(--green);            /* Ikon Hijau */
+    border: 2px solid var(--green); /* Garis pinggir Hijau */
+    
+    transition: all 0.3s ease;
+}
+
+#audio-btn:hover {
+    transform: scale(1.1); /* Efek membesar saat disentuh */
 }
 
 /* Definisikan animasinya */
