@@ -142,10 +142,6 @@ function loadUcapan() {
     });
 }
 
-
-// ============================================================================
-// 4. FUNGSI GLOBAL (BUKA UNDANGAN & COPY)
-// ============================================================================
 // ============================================================================
 // 4. FUNGSI GLOBAL (BUKA UNDANGAN & COPY)
 // ============================================================================
@@ -213,3 +209,37 @@ setInterval(() => {
     setVal("minutes", m);
     setVal("seconds", s);
 }, 1000);
+
+// ============================================================================
+// 6. FITUR AUTO-PAUSE MUSIK SAAT KELUAR TAB/BROWSER
+// ============================================================================
+let wasPlaying = false; // Pengingat apakah lagu sedang nyala atau tidak
+
+document.addEventListener("visibilitychange", function() {
+    const audio = document.getElementById("song");
+    const audioBtn = document.getElementById("audio-btn");
+    
+    if (!audio) return;
+
+    if (document.hidden) {
+        // JIKA USER KELUAR TAB / BROWSER
+        wasPlaying = !audio.paused; // Ingat status lagu sebelum ditinggal
+        audio.pause();              // Matikan lagu
+        
+        // Hentikan putaran ikon kaset
+        if (audioBtn) {
+            audioBtn.querySelector("i").classList.remove("fa-spin");
+        }
+    } else {
+        // JIKA USER BALIK LAGI KE UNDANGAN
+        // Nyalakan lagi HANYA jika sebelum ditinggal lagunya memang nyala
+        if (wasPlaying) {
+            audio.play().catch(e => console.log("Gagal memutar otomatis:", e));
+            
+            // Putar lagi ikon kaset
+            if (audioBtn) {
+                audioBtn.querySelector("i").classList.add("fa-spin");
+            }
+        }
+    }
+});
