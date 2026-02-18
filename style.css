@@ -167,36 +167,107 @@ body {
 .nama-tamu-final { font-family: var(--font-body), sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; margin: 5px 0; text-transform: capitalize; letter-spacing: 0.5px; }
 .maaf-text { font-size: 0.6rem; font-style: italic; color: var(--cream-bg); opacity: 0.6; margin: 5px 0 0 0; }
 
+/* =========================================
+   REVISI WARNA SEMUA TOMBOL 
+   (Normal: Hijau, Ditekan/Hover: Cream)
+   ========================================= */
+
+/* 1. Tombol Buka Undangan (Hero) */
 .btn-buka-final {
     display: flex; align-items: center; justify-content: center; gap: 10px;
-    background-color: var(--cream-bg); color: var(--green-dark);
-    border: none; padding: 12px 40px; border-radius: 50px;
+    padding: 12px 40px; border-radius: 50px;
     font-family: var(--font-body), sans-serif; font-weight: 700; letter-spacing: 1px;
     text-transform: uppercase; font-size: 0.8rem; cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;
+    
+    /* Warna Baru */
+    background-color: var(--green) !important; 
+    color: var(--cream) !important;
+    border: 1px solid var(--green) !important;
 }
-.btn-buka-final:hover { transform: translateY(-3px); background-color: #fff; }
+.btn-buka-final:hover, .btn-buka-final:active { 
+    background-color: var(--cream) !important; 
+    color: var(--green) !important; 
+    transform: translateY(-3px); 
+}
 
+/* 2. Tombol Kalender, Lokasi, WhatsApp, Instagram (.btn-outline-green) */
+.btn-outline-green {
+    padding: 10px 25px; border-radius: 50px; 
+    transition: all 0.3s ease;
+    
+    /* Warna Baru */
+    background-color: var(--green) !important; 
+    color: var(--cream) !important; 
+    border: 1px solid var(--green) !important;
+}
+.btn-outline-green:hover, .btn-outline-green:active { 
+    background-color: var(--cream) !important; 
+    color: var(--green) !important; 
+}
+
+/* 3. Tombol Copy Saldo & Kirim RSVP (.btn-light-green) */
+.btn-light-green {
+    padding: 12px; border-radius: 10px; font-weight: bold;
+    transition: all 0.3s ease;
+    
+    /* Warna Baru */
+    background-color: var(--green) !important; 
+    color: var(--cream) !important;
+    border: 1px solid var(--green) !important;
+}
+.btn-light-green:hover, .btn-light-green:active { 
+    background-color: var(--cream) !important;
+    color: var(--green) !important;
+}
+
+/* 4. Tombol Lihat Info Pengiriman (.btn-custom-green) */
+.btn-custom-green {
+    padding: 12px 25px; border-radius: 50px; font-weight: bold;
+    transition: all 0.3s ease;
+    
+    /* Warna Baru */
+    background-color: var(--green) !important; 
+    color: var(--cream) !important;
+    border: 1px solid var(--green) !important;
+}
+.btn-custom-green:hover, .btn-custom-green:active { 
+    background-color: var(--cream) !important;
+    color: var(--green) !important;
+}
 
 /* =========================================
    3. PAGE 1: FOTO LINGKARAN, NAMA SEBARIS & COUNTDOWN TRANSPARAN
    *(Sudah Diperkecil / Zoom-Out Minimalis)*
    ========================================= */
 
-/* Foto Berdua (Lingkaran Proporsional) */
+/* --- REVISI PAGE 1: BINGKAI FOTO (Ubah dari Lingkaran ke Oval/Arch Panjang) --- */
 .frame-lingkaran {
-    width: clamp(120px, 35vw, 170px); /* Zoom-out dari max 220px */
-    height: clamp(120px, 35vw, 170px);
-    border-radius: 50%;
-    border: 3px solid var(--green);
+    /* Lebar dibuat lebih ramping (zoomed-out) */
+    width: clamp(140px, 35vw, 180px);
+    
+    /* Tinggi dibuat LEBIH BESAR dari lebar untuk mengakomodasi foto panjang */
+    height: clamp(200px, 50vw, 260px);
+    
+    /* border-radius besar membuat sudutnya sangat lonjong, bukan lingkaran */
+    border-radius: 150px; 
+    
+    border: 3px solid var(--green); /* Tetap menggunakan garis hijau */
     overflow: hidden;
     position: relative;
     z-index: 2;
-    margin: 0 auto;
+    margin: 0 auto 20px auto; /* Tambah sedikit jarak di bawahnya */
+    
+    /* Tambahan bayangan lembut agar bingkai terasa timbul dan mewah */
+    box-shadow: 0 10px 25px rgba(91, 105, 70, 0.15);
 }
 
+/* Pastikan gambar mengisi bingkai oval tersebut */
 .img-berdua {
-    width: 100%; height: 100%; object-fit: cover; object-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar akan mengisi penuh tanpa terdistorsi */
+    object-position: center top; /* Prioritaskan bagian tengah-atas (wajah) */
 }
 
 /* Nama Sebaris Elegan (Sesuai Janji: Font Cormorant & Emas) */
