@@ -401,44 +401,48 @@ button.btn-buka-final:hover {
 }
 
 /* =========================================
-   REVISI TOTAL FOTO PAGE 1 (KHUSUS GAMBAR TRANSPARAN)
-   agar lebih cantik, timbul, dan tidak nabrak pinggir.
+   REVISI PAGE 1: FOTO KUBAH (ATAS LENGKUNG, BAWAH DATAR)
    ========================================= */
-/* 1. BINGKAI FOTO (Ukuran Diperbesar Sedikit) */
-.frame-lingkaran {
-    /* Lebar dinaikkan (min 160px, ideal 45vw, max 220px) */
-    width: clamp(160px, 45vw, 220px);
-    
-    /* Tinggi dinaikkan proporsional (min 230px, ideal 60vw, max 310px) */
-    height: clamp(230px, 60vw, 310px);
-    
-    border-radius: 150px;
-    border: 3px solid var(--green);
-    margin: 0 auto 20px auto;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
 
+/* 1. UBAH BENTUK BINGKAI MENJADI KUBAH */
+#page-1 .frame-lingkaran {
+    /* Ukuran tetap besar sesuai request sebelumnya */
+    width: clamp(220px, 55vw, 320px) !important;
+    height: clamp(310px, 75vw, 450px) !important;
+
+    /* KUNCI PERUBAHAN BENTUK: */
+    /* Atas Kiri & Kanan = Lengkung (50%) */
+    /* Bawah Kiri & Kanan = Datar (0) */
+    border-radius: 50% 50% 0 0 !important;
+
+    border: 3px solid var(--green) !important;
+    margin: 10px auto 25px auto !important;
+
+    /* Setup agar gambar di dalam nempel ke bawah */
     display: flex;
     align-items: flex-end; 
     justify-content: center;
-    background: rgba(255, 255, 255, 0.4);
+    
+    background: rgba(255, 255, 255, 0.4) !important;
+    /* Bayangan dipertegas di bagian bawah agar terlihat menapak */
     box-shadow: inset 0 -10px 20px rgba(91, 105, 70, 0.1), 
-                0 10px 25px rgba(91, 105, 70, 0.15);
+                0 15px 35px rgba(91, 105, 70, 0.2) !important;
+    
+    overflow: hidden; /* Memotong gambar yang keluar dari lengkungan atas */
 }
 
-/* 2. GAMBAR PENGANTIN (The Image) */
-.img-berdua {
-    /* --- PERUBAHAN UKURAN (Agar tidak nabrak dinding) --- */
-    width: auto; /* Biarkan lebar menyesuaikan tinggi secara proporsional */
-    height: 92%; /* TINGGI DIKURANGI (tidak 100%) agar ada jarak di atas */
-    max-width: 95%; /* Penjaga agar tidak terlalu melebar jika di layar tertentu */
-    /* Memberi bayangan pada PNG transparan agar terlihat TIMBUL (pop-out) */
-    filter: drop-shadow(0 5px 8px rgba(91, 105, 70, 0.25));
+/* 2. SESUAIKAN POSISI GAMBAR AGAR "DUDUK MANTAP" DI DASAR */
+#page-1 .img-berdua {
+    width: auto !important;
+    /* Tinggi dimaksimalkan mendekati 100% agar mengisi penuh ke bawah */
+    height: 98% !important; 
+    max-width: 98% !important;
 
-    /* Sedikit trik agar bagian bawah gambar benar-benar menempel di dasar bingkai */
-    margin-bottom: -2px; 
+    /* Trik kecil: tarik 1px ke bawah agar benar-benar nempel garis border */
+    margin-bottom: -1px !important; 
     
+    /* Drop shadow halus di kaki gambar */
+    filter: drop-shadow(0 5px 8px rgba(91, 105, 70, 0.25)) !important;
     transition: all 0.5s ease;
 }
 
