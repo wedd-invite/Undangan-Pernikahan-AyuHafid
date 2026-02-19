@@ -111,7 +111,7 @@ body {
 .huruf-h { bottom: 0; right: 0; transform: translate(30px, 20px) !important; }
 
 .bunga-tulip {
-    width: 130px !important; /* Bunga tulip tengah ikut membesar */
+    width: 170px !important; /* Bunga tulip tengah ikut membesar */
     z-index: 2;
     transform: translateY(15px) !important;
     filter: drop-shadow(0 5px 15px rgba(74, 93, 67, 0.2));
@@ -133,7 +133,7 @@ body {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
     
-    padding: 20px 15px !important;
+    padding: 20px 15px 40px 15px !important;
     
     /* FLEXBOX UTAMA: Mengatur isi agar terdistribusi rapi */
     display: flex;
@@ -155,7 +155,7 @@ body {
     text-transform: uppercase !important; 
     letter-spacing: 4px !important; 
     
-    margin: 0 0 5px 0 !important; /* Jarak ke nama mempelai */
+    margin: 0 0 2px 0 !important; /* Jarak ke nama mempelai */
     opacity: 0.9 !important;
 }
 
@@ -194,7 +194,7 @@ body {
     background: transparent !important; 
     border: none !important; 
     padding: 0; 
-    margin: 0 0 15px 0 !important; /* Jarak ke Tombol Buka */
+    margin: 0 0 10px 0 !important; /* Jarak ke Tombol Buka */
 }
 
 .kepada-text { 
@@ -225,13 +225,15 @@ button.btn-buka-final {
     text-transform: uppercase; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
     margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
 
 /* KHUSUS HP (MOBILE) - Agar Tetap Rapi */
 @media screen and (max-width: 600px) {
+    .bunga-tulip{ width: 125px !important; transform: translateY(8px) !important;}
     .nama-mempelai-hero { font-size: 3.2rem !important; }
     .the-wedding-text { font-size: 0.75rem !important; letter-spacing: 3px !important; }
-    .hero-bottom-wrapper { padding: 15px !important; }
+    .hero-bottom-wrapper { padding: 15px 15px 45px 15px !important; }
     .tamu-box-final { margin-bottom: 10px !important; }
 }
 
