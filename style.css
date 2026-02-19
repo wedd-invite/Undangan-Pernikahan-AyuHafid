@@ -465,7 +465,7 @@ button.btn-buka-final:hover {
 #page-1 .img-berdua {
     width: auto !important;
     /* Tinggi dimaksimalkan mendekati 100% agar mengisi penuh ke bawah */
-    height: 100% !important; 
+    height: 97% !important; 
     max-width: 98% !important;
 
     /* Trik kecil: tarik 1px ke bawah agar benar-benar nempel garis border */
@@ -473,8 +473,6 @@ button.btn-buka-final:hover {
     
     /* Drop shadow halus di kaki gambar */
     filter: drop-shadow(0 5px 8px rgba(91, 105, 70, 0.25)) !important;
-    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     transition: all 0.5s ease;
 }
 
