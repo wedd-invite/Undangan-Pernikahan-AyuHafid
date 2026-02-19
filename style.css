@@ -1247,47 +1247,89 @@ section#closing p.fw-bold {
 }
 
 /* =========================================
-   REVISI PEMBATAS -&- FULL WIDTH (BANNER HIJAU)
+   NEW LUXURY SEPARATOR (&)
    ========================================= */
 
-/* 1. Memaksa kolom pembungkus -&- untuk mengambil lebar 100% agar memutus baris */
-#page-3 .col-md-2 {
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-}
-
-/* 2. Desain Banner Hijau Full-Width untuk -&- */
-.ampersand-huge {
-    background-color: var(--green) !important;
-    color: var(--cream) !important;
-    
-    /* Trik Kunci: Menembus batas container kiri & kanan agar full layar */
-    width: 100vw;
+/* 1. Container Utama (Memaksa Full Width) */
+.wedding-separator-banner {
+    width: 100vw;               /* Lebar selebar layar penuh */
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -50vw;
+    margin-left: -50vw;         /* Trik CSS agar menembus container Bootstrap */
     margin-right: -50vw;
     
-    /* Mengatur ketebalan/tinggi background hijau */
-    padding: 30px 0 !important; 
-    margin-top: 40px !important;
-    margin-bottom: 40px !important;
+    background-color: var(--green); /* Background Hijau Full */
+    padding: 30px 0;            /* Tinggi Banner */
     
-    /* Tipografi & Warna */
-    text-align: center;
-    font-family: var(--font-script) !important;
-    font-size: 5rem !important; 
-    opacity: 1 !important; /* Membatalkan efek transparan (opacity 0.2) bawaan sebelumnya */
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;                  /* Jarak antar elemen */
     
-    /* Garis pembatas atas & bawah (Opsional: menggunakan warna cream agar kontras dengan hijau) */
-    border-top: 1px solid var(--cream-dark);
-    border-bottom: 1px solid var(--cream-dark);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Bayangan halus di bawah banner */
+    border-top: 1px solid rgba(250, 243, 221, 0.2); /* Garis batas tipis */
+    border-bottom: 1px solid rgba(250, 243, 221, 0.2);
+    overflow: hidden;
+}
+
+/* 2. Lingkaran Tengah (Badge) */
+.ampersand-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--cream); /* Lingkaran warna Cream */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold);  /* Ring Emas */
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1); /* Efek glowing transparan */
+    position: relative;
+    z-index: 2;
+}
+
+/* 3. Simbol Dan (&) */
+.symbol-and {
+    font-family: var(--font-script); /* Font sambung */
+    font-size: 3rem;
+    color: var(--green);    /* Warna teks Hijau */
+    margin-top: 5px;        /* Sedikit penyesuaian posisi vertikal */
+    margin-right: 2px;      /* Sedikit penyesuaian optik */
+}
+
+/* 4. Garis Dekorasi Kiri & Kanan */
+.decor-line {
+    height: 1px;
+    width: 30%;             /* Panjang garis */
+    max-width: 200px;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        var(--cream), 
+        transparent
+    ); /* Efek garis memudar di ujung */
+    opacity: 0.7;
+}
+
+/* 5. Responsif untuk HP (Mobile) */
+@media screen and (max-width: 600px) {
+    .wedding-separator-banner {
+        padding: 20px 0;
+        gap: 10px;
+    }
     
-    /* Supaya teks & bayangan terlihat tegas */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    .ampersand-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .symbol-and {
+        font-size: 2.2rem;
+    }
+    
+    .decor-line {
+        width: 20%; /* Garis lebih pendek di HP */
+    }
 }
 
 /* =========================================
