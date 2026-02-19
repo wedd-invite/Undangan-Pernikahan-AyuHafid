@@ -235,7 +235,7 @@ body {
     font-style: italic !important;
     color: var(--cream) !important; 
     opacity: 0.6 !important; /* Dibuat agak pudar agar tidak mencolok */
-    margin: 5px 0 0 0 !important; /* Sedikit jarak dari nama tamu di atasnya */
+    margin: 2px 0 0 0 !important; /* Sedikit jarak dari nama tamu di atasnya */
     letter-spacing: 0.5px !important;
 }
 
@@ -251,7 +251,7 @@ button.btn-buka-final {
     font-weight: 700;
     text-transform: uppercase; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
-    margin-top: 5px !important;
+    margin-top: 0 !important;
     margin-bottom: 5px !important;
 }
 
