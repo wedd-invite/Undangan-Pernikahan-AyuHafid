@@ -416,7 +416,7 @@ button.btn-buka-final:hover {
     border-radius: 50% 50% 0 0 !important;
 
     border: 3px solid var(--green) !important;
-    margin: 10px auto 25px auto !important;
+    margin: 60px auto 30px auto !important;
 
     /* Setup agar gambar di dalam nempel ke bawah */
     display: flex;
@@ -425,24 +425,26 @@ button.btn-buka-final:hover {
     
     background: rgba(255, 255, 255, 0.4) !important;
     /* Bayangan dipertegas di bagian bawah agar terlihat menapak */
-    box-shadow: inset 0 -10px 20px rgba(91, 105, 70, 0.1), 
-                0 15px 35px rgba(91, 105, 70, 0.2) !important;
+    box-shadow: inset 0 -25px 30px -10px rgba(91, 105, 70, 0.3), 
+                0 10px 20px rgba(91, 105, 70, 0.1) !important;
     
-    overflow: hidden; /* Memotong gambar yang keluar dari lengkungan atas */
+    overflow: hidden !important; /* Memotong gambar yang keluar dari lengkungan atas */
 }
 
 /* 2. SESUAIKAN POSISI GAMBAR AGAR "DUDUK MANTAP" DI DASAR */
 #page-1 .img-berdua {
     width: auto !important;
     /* Tinggi dimaksimalkan mendekati 100% agar mengisi penuh ke bawah */
-    height: 98% !important; 
+    height: 100% !important; 
     max-width: 98% !important;
 
     /* Trik kecil: tarik 1px ke bawah agar benar-benar nempel garis border */
-    margin-bottom: -1px !important; 
+    margin-bottom: 0 !important; 
     
     /* Drop shadow halus di kaki gambar */
     filter: drop-shadow(0 5px 8px rgba(91, 105, 70, 0.25)) !important;
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     transition: all 0.5s ease;
 }
 
