@@ -61,26 +61,25 @@ body {
 
 
 /* =========================================
-   2. HERO SECTION (SAMPUL DEPAN)
-   *(Sudah Diperkecil / Zoom-Out Minimalis)*
+   REVISI HERO SECTION (PROPORSI 60:40, INISIAL RAKSASA, ISI RAPAT)
    ========================================= */
+
+/* 1. CONTAINER UTAMA */
 .hero-container {
-    position: fixed;
-    top: 0; left: 0; 
+    position: fixed; top: 0; left: 0; 
     width: 100%; 
-    height: 100vh; 
-    height: 100dvh; 
+    height: 100vh; height: 100dvh; 
     z-index: 9999;
     background-color: var(--cream-bg); 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
     overflow: hidden;
 }
 
+/* 2. BAGIAN CREAM (60% ATAS) */
 .hero-content {
-    flex-grow: 1; 
+    height: 60vh !important;
+    height: 60dvh !important; /* Kunci proporsi 60% */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,10 +88,11 @@ body {
     z-index: 1;
 }
 
+/* 3. INISIAL A & H (DIBUAT JAUH LEBIH BESAR) */
 .inisial-box-final {
+    width: 450px !important;  /* Lebar kotak diperbesar drastis */
+    height: 450px !important; /* Tinggi kotak diperbesar drastis */
     position: relative;
-    width: 250px; /* Diperkecil */
-    height: 270px; /* Diperkecil */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,40 +100,94 @@ body {
 
 .inisial-huruf {
     font-family: var(--font-heading), serif;
-    font-size: 8.5rem; /* Zoom-out (sebelumnya 11rem) */
+    font-size: 15rem !important; /* Font dinaikkan agar raksasa */
     color: var(--green-dark);
     line-height: 1;
     position: absolute;
     z-index: 1;
-    transition: all 0.5s ease;
 }
 
-.huruf-a { top: 0; left: 0; transform: translate(-10px, -20px); }
-.huruf-h { bottom: 0; right: 0; transform: translate(10px, 40px); }
+/* Posisi ditarik agar seimbang dengan ukuran besar */
+.huruf-a { top: 0; left: 0; transform: translate(-30px, -20px) !important; }
+.huruf-h { bottom: 0; right: 0; transform: translate(30px, 20px) !important; }
 
 .bunga-tulip {
-    width: 85px; /* Zoom-out (sebelumnya 110px) */
-    height: auto;
+    width: 130px !important; /* Bunga tulip tengah ikut membesar */
     z-index: 2;
-    transform: translateY(10px);
+    transform: translateY(15px) !important;
     filter: drop-shadow(0 5px 15px rgba(74, 93, 67, 0.2));
 }
 
+
+/* 4. BAGIAN HIJAU (40% BAWAH & DATAR) */
 .hero-bottom-wrapper {
+    height: 40vh !important;
+    height: 40dvh !important; /* Kunci proporsi 40% */
     background-color: var(--green-dark); 
     width: 100%;
     
-    /* KUNCI: Mengubah lengkungan menjadi 0 agar lurus/datar/siku */
+    /* Memastikan sudut tetap SIKU/DATAR (Tanpa lengkungan) */
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
     
-    padding: 35px 20px 40px 20px; 
+    padding: 15px 20px !important; /* Padding disesuaikan */
     display: flex;
     flex-direction: column;
+    justify-content: center !important; /* KUNCI: Mendorong isi ke tengah agar padat */
     align-items: center;
     text-align: center;
     z-index: 10;
     box-shadow: 0 -10px 30px rgba(0,0,0,0.1); 
+}
+
+/* 5. MERAPATKAN ISI KOTAK HIJAU AGAR LEBIH BERISI */
+.the-wedding-text { 
+    margin: 0 0 5px 0 !important; /* Jarak dirapatkan */
+    font-size: 0.75rem; color: var(--cream); letter-spacing: 3px; font-weight: 600;
+}
+
+.nama-mempelai-hero {
+    font-size: clamp(4rem, 12vw, 7.5rem) !important; /* Font pas di dalam 40% */
+    margin: 0 0 5px 0 !important; /* Jarak bawah dipangkas habis */
+    line-height: 1 !important;
+    color: var(--cream); font-family: var(--font-heading); font-weight: 600; font-style: italic;
+}
+
+.divider-solid {
+    margin: 0 auto 12px auto !important; /* Didekatkan ke teks atas & bawah */
+    width: 40%; max-width: 250px; border-top: 1px solid var(--cream); opacity: 0.8;
+}
+
+.tamu-box-final {
+    margin: 0 auto 12px auto !important; /* Jarak bawah dipangkas */
+    padding: 0; background: transparent !important; border: none !important; 
+}
+
+.kepada-text { margin: 0 0 2px 0 !important; font-size: 0.8rem; color: var(--cream); opacity: 0.8; }
+.nama-tamu-final { margin: 2px 0 !important; font-size: 1.2rem; font-weight: 700; color: var(--cream); }
+.maaf-text { margin: 2px 0 0 0 !important; font-size: 0.6rem; color: var(--cream); opacity: 0.6; }
+
+button.btn-buka-final {
+    margin-top: 5px !important; /* Ditarik ke atas agar tidak renggang */
+}
+
+
+/* =========================================
+   6. PENYESUAIAN KHUSUS LAYAR HP (MOBILE)
+   ========================================= */
+@media screen and (max-width: 600px) {
+    /* INISIAL HP LEBIH BESAR */
+    .inisial-box-final { width: 320px !important; height: 320px !important; }
+    .inisial-huruf { font-size: 11rem !important; }
+    
+    .huruf-a { transform: translate(-10px, -15px) !important; }
+    .huruf-h { transform: translate(10px, 15px) !important; }
+    .bunga-tulip { width: 100px !important; transform: translateY(5px) !important; }
+
+    /* NAMA & JARAK DI HP */
+    .nama-mempelai-hero { font-size: 3.5rem !important; margin-bottom: 5px !important; }
+    .hero-bottom-wrapper { padding: 10px 15px !important; }
+    .tamu-box-final { margin-bottom: 15px !important; }
 }
 /* =========================================
    REVISI HERO BAGIAN BAWAH (SAMPUL DEPAN)
