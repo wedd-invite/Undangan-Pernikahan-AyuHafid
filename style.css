@@ -1121,81 +1121,6 @@ section#rsvp {
 }
 
 /* =========================================
-   REVISI PAGE PENUTUP (CLOSING / TERIMA KASIH)
-   TEMA: MINIMALIS, MANIS, & ZOOM-OUT
-   ========================================= */
-
-/* 1. Spasi Section Penutup (Dirapatkan) */
-section#closing {
-    padding: 50px 0 30px 0 !important;
-}
-
-/* 2. Ikon Bunga Penutup (Dikecilkan) */
-section#closing img[src*="bunga-08.svg"] {
-    width: 35px !important; /* Susut dari 50px */
-    margin-bottom: 20px !important;
-}
-
-/* 3. Foto Couple Penutup (Dibuat lebih mungil dari Page 1) */
-section#closing .frame-lingkaran {
-    width: clamp(120px, 35vw, 160px) !important; /* Lebih kecil & manis */
-    height: clamp(170px, 45vw, 230px) !important;
-    margin-bottom: 25px !important;
-}
-
-/* 4. Judul "Terima Kasih" */
-section#closing h2.font-aesthetic {
-    font-size: 1.8rem !important; /* Dikecilkan */
-    margin-bottom: 5px !important;
-    letter-spacing: 0.5px !important;
-}
-
-/* 5. Sub-judul "Atas kehadiran..." */
-section#closing .letter-spacing-small {
-    font-size: 0.65rem !important;
-    letter-spacing: 3px !important;
-    margin-bottom: 25px !important;
-}
-
-/* 6. Paragraf Formal (Kunci Minimalis: Ramping & Rapi TANPA di-break) */
-section#closing p.fst-italic {
-    font-size: 0.8rem !important; 
-    line-height: 1.6 !important;
-    
-    /* KUNCI ELEGAN: Lebar maksimal hanya 85% dari layar HP */
-    width: 85% !important; 
-    max-width: 400px !important; 
-    
-    margin: 0 auto 20px auto !important; /* Otomatis rata tengah */
-    font-weight: 300 !important;
-}
-
-/* 7. Kalimat Bahasa Inggris (Hope to see you soon) */
-section#closing p.fw-bold {
-    font-size: 0.75rem !important;
-    letter-spacing: 1.5px !important;
-    
-    /* Disamakan agar ramping ke tengah */
-    width: 85% !important; 
-    max-width: 400px !important; 
-    
-    margin: 0 auto 40px auto !important;
-    font-weight: 500 !important; 
-    opacity: 0.8 !important;
-    line-height: 1.5 !important;
-}
-
-/* 8. Nama Mempelai Paling Bawah (Proporsional) */
-.nama-mempelai-footer {
-    font-size: clamp(2.5rem, 8vw, 4rem) !important; /* Diturunkan sedikit agar pas */
-    margin-bottom: 10px !important;
-}
-
-.nama-mempelai-footer .dan-simbol-emas {
-    font-size: clamp(2rem, 7vw, 3rem) !important;
-}
-
-/* =========================================
    REVISI INISIAL A & H (UKURAN RAKSASA & LEGA)
    ========================================= */
 
@@ -1437,86 +1362,122 @@ section#page-1 {
 }
 
 /* =========================================
-   REVISI FINAL CLOSING: BAWAH DATAR & FOTO MANTAP
+   FIX FINAL: PAGE CLOSING (SATU SUMBER)
    ========================================= */
 
-/* 1. BENTUK SECTION (Atas Lengkung, Bawah Datar Lurus) */
+/* 1. SETUP UTAMA SECTION (Bawah Datar, Atas Lengkung) */
 section#closing {
-    /* Membuat lengkungan manis di bagian ATAS */
+    /* Lengkungan manis di bagian ATAS */
     border-top-left-radius: 50px !important;
     border-top-right-radius: 50px !important;
 
-    /* KUNCI UTAMA: Memastikan bagian BAWAH LURUS DATAR (Siku) */
+    /* BAGIAN BAWAH LURUS DATAR (SIKU) - UPDATE PENTING */
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
 
     background-color: var(--cream) !important;
     
-    /* Padding bawah dikurangi drastis agar elemen terasa dekat dengan "tanah" */
-    padding-top: 40px !important;
-    padding-bottom: 10px !important; 
+    /* Padding diatur agar foto menempel ke bawah */
+    padding-top: 50px !important;
+    padding-bottom: 0px !important; /* Nol-kan padding bawah */
     
     position: relative;
     z-index: 10;
     overflow: hidden;
-}
-
-/* Menghilangkan garis pembatas bawaan jika masih ada */
-section#closing .border-top {
+    
+    /* Matikan border bawaan jika ada */
     border: none !important;
-    padding-top: 0 !important;
 }
 
-
-/* 2. PENYESUAIAN BINGKAI FOTO AGAR TERLIHAT "DUDUK MANTAP" */
+/* 2. PENYESUAIAN BINGKAI FOTO (DUDUK MANTAP) */
 section#closing .frame-lingkaran {
-    /* Ukuran tetap mungil (sesuai request sebelumnya) */
+    /* Ukuran Mungil */
     width: clamp(110px, 30vw, 150px) !important;
     height: clamp(150px, 40vw, 210px) !important;
     
-    /* Margin bawah dibuat sangat tipis agar bingkai terasa menapak di garis akhir */
-    margin: 0 auto 5px auto !important; 
+    /* Margin bawah dibuat 0 atau minus agar nempel garis */
+    margin: 0 auto 0 auto !important; 
     
+    border-radius: 100px 100px 0 0 !important; /* Opsional: bawah bingkai ikut datar */
+    /* Jika ingin bingkai tetap bulat utuh, hapus baris border-radius di atas dan ganti: border-radius: 100px !important; */
     border-radius: 100px !important;
-    border: 3px solid var(--green) !important; /* Garis bingkai dipertegas sedikit */
+
+    border: 3px solid var(--green) !important;
     background: rgba(255, 255, 255, 0.4) !important;
     
-    /* Bayangan difokuskan ke bawah agar terlihat menapak */
-    box-shadow: 0 10px 15px -5px rgba(91, 105, 70, 0.2) !important;
+    /* Bayangan ke bawah */
+    box-shadow: 0 -5px 20px rgba(91, 105, 70, 0.1) !important;
+    
+    position: relative;
+    bottom: -5px; /* Dorong sedikit ke bawah agar menutupi gap */
 }
 
-/* 3. PENYESUAIAN GAMBAR DI DALAMNYA */
+/* 3. GAMBAR PENGANTIN */
 section#closing .img-berdua {
-    /* Gambar mengisi penuh ke bawah */
-    height: 96% !important; 
-    /* Trik: menarik gambar sedikit ke bawah agar menempel garis bingkai */
-    margin-bottom: -2px !important; 
-    /* Drop shadow halus di kaki gambar */
+    height: 98% !important; /* Gambar diperbesar mengisi bingkai */
+    margin-bottom: -1px !important; 
     filter: drop-shadow(0 4px 4px rgba(91, 105, 70, 0.2)) !important;
 }
 
-
-/* --- (Bagian Font di bawah ini tetap KECIL sesuai request sebelumnya) --- */
-
+/* 4. FONTS & TEKS (VERSI KECIL / ZOOM-OUT) */
 section#closing h2.font-aesthetic {
-    font-size: 1.5rem !important; margin-bottom: 5px !important;
+    font-size: 1.5rem !important; 
+    margin-bottom: 5px !important;
+    color: var(--green) !important;
 }
+
+section#closing img[src*="bunga-08.svg"] {
+    width: 30px !important; /* Bunga kecil */
+    margin-bottom: 10px !important;
+}
+
 section#closing .letter-spacing-small {
-    font-size: 0.6rem !important; margin-bottom: 20px !important; opacity: 0.7 !important;
+    font-size: 0.6rem !important; 
+    margin-bottom: 20px !important; 
+    opacity: 0.7 !important;
 }
-section#closing p.fst-italic, section#closing p.fw-bold {
-    font-size: 0.75rem !important; width: 85% !important; max-width: 400px !important;
-    margin-left: auto !important; margin-right: auto !important;
+
+section#closing p.fst-italic {
+    font-size: 0.75rem !important; 
+    width: 85% !important; 
+    max-width: 400px !important;
+    margin: 0 auto 15px auto !important;
+    font-weight: 300 !important;
+    line-height: 1.5 !important;
 }
+
+section#closing p.fw-bold {
+    font-size: 0.7rem !important; 
+    width: 85% !important; 
+    max-width: 400px !important;
+    margin: 0 auto 30px auto !important; /* Jarak ke nama */
+    opacity: 0.7 !important;
+    font-weight: 500 !important;
+}
+
+/* 5. NAMA MEMPELAI BAWAH */
 .nama-mempelai-footer {
-    font-size: clamp(2rem, 6vw, 3rem) !important; margin-bottom: 15px !important;
+    font-family: var(--font-heading) !important;
+    font-size: clamp(2rem, 6vw, 3rem) !important; 
+    margin-bottom: 20px !important;
+    line-height: 1 !important;
 }
+
 .nama-mempelai-footer .dan-simbol-emas {
      font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
 }
 
-/* Menghilangkan padding kosong di HTML (div class="pb-5") agar benar-benar mentok bawah */
-section#closing .pb-5 {
+/* 6. HILANGKAN ELEMENT PENGGANGGU DI HTML */
+/* Ini penting! Kode ini menyembunyikan div kosong di bawah foto */
+section#closing .pb-5, 
+section#closing .pt-4 {
     padding-bottom: 0 !important;
-    display: none !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: block !important; /* Pastikan container tetap ada tapi paddingnya hilang */
+}
+
+/* Reset border top hijau tipis bawaan */
+section#closing .border-top {
+    border-top: none !important;
 }
