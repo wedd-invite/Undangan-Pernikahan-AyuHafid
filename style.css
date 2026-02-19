@@ -183,7 +183,7 @@ body {
     text-transform: uppercase !important; 
     letter-spacing: 4px !important; 
     
-    margin: 0 !important; /* Jarak ke nama mempelai */
+    margin: -2 !important; /* Jarak ke nama mempelai */
     opacity: 0.9 !important;
 }
 
