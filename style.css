@@ -770,3 +770,137 @@ button.btn-buka-final:hover {
 section#date {
     padding: 60px 0 !important; /* Memberi ruang napas atas bawah */
 }
+
+/* =========================================
+   REVISI PAGE 02 (QUOTE / QS. AR-RUM)
+   TEMA: MINIMALIS, RAMPING, & ZOOM-OUT
+   ========================================= */
+
+/* 1. Atur Ketinggian & Spasi Section */
+section#page-2 {
+    padding: 60px 0 !important; /* Padding atas-bawah dikurangi agar tidak terlalu tinggi */
+    min-height: auto !important; /* Jangan memaksakan full-screen */
+}
+
+/* 2. Bunga Berputar (Diperkecil) */
+section#page-2 .rotating-flower {
+    width: 40px !important; /* Zoom-out drastis dari 60px */
+    margin-bottom: 15px !important;
+    opacity: 0.7 !important; /* Agak transparan biar elegan */
+}
+
+/* 3. Judul "Our Special Day" (Dibuat Kecil & Manis) */
+section#page-2 h2.font-aesthetic {
+    font-size: 1.8rem !important; /* Font judul diperkecil */
+    margin-bottom: 20px !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* 4. Container Quote Box (KUNCI ZOOM-OUT) */
+/* Kita batasi lebarnya agar teks tidak melebar ke samping layar */
+section#page-2 .quote-box {
+    max-width: 550px !important; /* Dibuat ramping di tengah */
+    margin: 0 auto !important;
+    padding: 0 25px !important; /* Memberi jarak aman kiri-kanan */
+}
+
+/* 5. Isi Teks Ayat (QS Ar-Rum) */
+section#page-2 .quote-box p {
+    font-size: 0.85rem !important; /* Ukuran huruf diperkecil (Zoom-out) */
+    line-height: 1.8 !important; /* Spasi baris renggang agar mudah dibaca */
+    font-weight: 300 !important; /* Huruf tipis (Light) */
+    opacity: 0.9 !important;
+    margin-bottom: 20px !important;
+}
+
+/* 6. Garis Pemisah Tipis */
+section#page-2 .divider-cream {
+    width: 40px !important; /* Garis diperpendek */
+    height: 1px !important; /* Garis diperhalus */
+    margin: 0 auto 15px auto !important;
+    opacity: 0.5 !important;
+}
+
+/* 7. Footer (Nama Surah) */
+section#page-2 footer {
+    font-size: 0.7rem !important; /* Sangat kecil & minimalis */
+    letter-spacing: 3px !important; /* Huruf dijarangkan (style premium) */
+    opacity: 0.8 !important;
+}
+
+/* =========================================
+   REVISI PAGE 03 (DETAIL ACARA / AKAD & RESEPSI)
+   TEMA: MINIMALIS, ZOOM-OUT, & ELEGANT
+   ========================================= */
+
+/* 1. Kartu Acara Utama (Diperkecil & Ramping) */
+.card-acara {
+    padding: 30px 20px !important; /* Ruang dalam dikurangi agar lebih padat */
+    border-radius: 16px !important; /* Sudut sedikit lebih tajam (elegan) */
+    max-width: 320px !important; /* KUNCI: Kunci lebar maksimal agar tidak raksasa di layar */
+    margin: 0 auto 20px auto !important; /* Posisi rata tengah */
+    box-shadow: 0 10px 25px rgba(91, 105, 70, 0.05) !important; /* Bayangan super halus */
+    border: 1px solid rgba(91, 105, 70, 0.1) !important; /* Garis batas tipis estetik */
+}
+
+/* 2. Ikon di dalam kartu (Cincin / Lonceng dll) */
+.card-acara img {
+    max-width: 40px !important; /* Ikon diperkecil */
+    margin-bottom: 15px !important;
+    opacity: 0.8 !important;
+}
+
+/* 3. Judul Acara (Akad Nikah / Resepsi) */
+.card-acara h3, 
+.card-acara .font-aesthetic {
+    font-size: 1.4rem !important; /* Judul tidak lagi berteriak */
+    letter-spacing: 1px !important;
+    margin-bottom: 15px !important;
+    color: var(--green) !important;
+}
+
+/* 4. Teks Detail Waktu & Tanggal */
+.detail-acara {
+    margin-bottom: 15px !important;
+    padding: 10px 0 !important;
+    border-top: 1px solid rgba(91, 105, 70, 0.1) !important;
+    border-bottom: 1px solid rgba(91, 105, 70, 0.1) !important;
+}
+.detail-acara p {
+    font-size: 0.8rem !important; /* Ukuran teks waktu dikecilkan */
+    margin-bottom: 5px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.5px !important;
+}
+.detail-acara strong {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+}
+
+/* 5. Teks Alamat Lokasi */
+.card-acara p.small {
+    font-size: 0.75rem !important;
+    line-height: 1.5 !important;
+    opacity: 0.85 !important;
+    margin-bottom: 20px !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* 6. Tombol "Lihat Lokasi" (Tipis & Ramping) */
+.card-acara .btn-outline-green,
+.card-acara .btn-custom-green {
+    padding: 8px 25px !important;
+    font-size: 0.7rem !important; /* Huruf tombol kecil */
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important; /* Kapital semua agar tegas */
+    border-width: 1px !important; /* Garis luar sangat tipis */
+    border-radius: 50px !important;
+    box-shadow: none !important; /* Hilangkan bayangan berat pada tombol */
+}
+
+/* 7. Judul Utama Section (Jika ada tulisan "Rangkaian Acara" di atasnya) */
+#acara .display-4,
+#acara h2.font-aesthetic {
+    font-size: 2.2rem !important; /* Pengecilan judul section */
+    margin-bottom: 15px !important;
+}
