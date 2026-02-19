@@ -446,92 +446,99 @@ button.btn-buka-final:hover {
 .detail-acara p { margin-bottom: 8px; font-weight: 500; }
 
 /* =========================================
-   WEDDING GIFT CARD (REVISI: TEXTURE BARU & UKURAN KOMPAK)
+   WEDDING GIFT CARD (REVISI: MUNGIL & BERJARAK KIRI-KANAN)
    ========================================= */
-.btn-block-custom { width: 100%; max-width: 300px; }
+
+/* Tombol accordion di atasnya juga dibatasi lebarnya */
+.btn-block-custom { 
+    width: 100%; 
+    max-width: 280px !important; /* Diperkecil agar serasi dengan kartu */
+}
 
 .credit-card {
-    /* Ukuran Kompak (Fixed Height) */
-    height: 180px; 
-    border-radius: 16px; 
-    padding: 20px; /* Padding dipadatkan */
+    /* --- KUNCI PERUBAHAN DI SINI --- */
+    width: 100%;
     
-    /* Background Gradient Hijau Sage */
+    /* 1. Batasi lebar maksimal agar tidak mepet layar HP */
+    max-width: 290px !important; 
+    
+    /* 2. Buat rata tengah agar ada jarak kiri-kanan yang seimbang */
+    margin: 0 auto 20px auto !important; 
+    
+    /* 3. Tinggi dikunci agar mungil */
+    height: 170px !important; 
+    
+    /* ------------------------------ */
+
+    border-radius: 16px !important; 
+    padding: 18px !important;
+    
+    /* Gradient Hijau Sage */
     background: linear-gradient(135deg, #4A563A 0%, #5b6946 100%);
     
     position: relative; 
     overflow: hidden;
     
     /* Shadow & Border Halus */
-    box-shadow: 0 10px 25px rgba(91, 105, 70, 0.25); 
+    box-shadow: 0 10px 20px rgba(91, 105, 70, 0.2); 
     border: 1px solid rgba(255, 255, 255, 0.15); 
     
-    display: flex; flex-direction: column; margin-bottom: 15px;
+    display: flex; flex-direction: column; justify-content: space-between;
 }
 
-/* TEXTURE BARU: Garis Diagonal Halus (Lebih Premium dari Titik-titik) */
+/* Texture Garis Halus (Premium Look) */
 .card-bg-texture {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-    opacity: 0.5; /* Transparansi halus */
-    
-    /* Membuat pola garis miring berulang yang sangat tipis */
+    opacity: 0.5;
     background-image: repeating-linear-gradient(
         45deg,
         rgba(255, 255, 255, 0.03) 0px,
         rgba(255, 255, 255, 0.03) 1px,
         transparent 1px,
-        transparent 6px
+        transparent 5px
     );
     z-index: 0;
 }
 
-/* Dekorasi Lingkaran Cahaya (Diperkecil) */
+/* Dekorasi Lingkaran */
 .card-circle-decor {
     position: absolute; top: -30px; right: -30px; 
-    width: 120px; height: 120px;
+    width: 100px !important; height: 100px !important;
     background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
     border-radius: 50%; z-index: 0;
 }
 
-.card-content { 
-    position: relative; z-index: 2; height: 100%; 
-    display: flex; flex-direction: column; justify-content: space-between; 
-}
+.card-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
 
-/* --- PENYESUAIAN UKURAN FONT (KOMPAK) --- */
-.letter-spacing-2 { letter-spacing: 1.5px; }
+/* Font Styles (Disesuaikan dengan kartu mungil) */
+.letter-spacing-2 { letter-spacing: 1px !important; }
 
-/* Font Nama Pemilik */
-.credit-card .font-aesthetic { 
-    font-size: 0.9rem; letter-spacing: 1px; 
-}
-/* Font Label Kecil */
-.credit-card .small { 
-    font-size: 0.7rem; letter-spacing: 0.5px; 
-}
-/* Font Nomor Rekening */
+.credit-card .font-aesthetic { font-size: 0.85rem !important; letter-spacing: 0.5px; }
+.credit-card .small { font-size: 0.65rem !important; letter-spacing: 0.5px; }
+
+/* Nomor Rekening */
 .credit-card h3 { 
-    font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 2px; 
-}
-/* Font Alamat */
-.credit-card #textAlamat { 
-    font-size: 0.75rem; line-height: 1.3; 
+    font-size: 1.1rem !important; 
+    letter-spacing: 2px !important; 
+    margin-bottom: 2px !important; 
 }
 
-/* Logo Box (BSI/ShopeePay) */
+/* Alamat */
+.credit-card #textAlamat { font-size: 0.7rem !important; line-height: 1.3; }
+
+/* Logo Bank/Ewallet */
 .credit-card .bg-cream {
-    height: 24px; width: 40px; padding: 3px;
+    height: 22px !important; width: 38px !important; padding: 3px !important;
     display: flex; align-items: center; justify-content: center;
 }
 .credit-card .bg-cream img { max-height: 100%; width: auto; }
 
-/* Tombol Copy (Tipis & Ramping) */
+/* Tombol Copy (Cream) */
 .credit-card .btn-light-green {
-    padding: 6px 10px; 
-    font-size: 0.75rem; 
-    border-radius: 8px; 
-    margin-top: 8px;
-    /* Pastikan warna tombol tetap Cream sesuai request sebelumnya */
+    padding: 6px 10px !important; 
+    font-size: 0.7rem !important; 
+    border-radius: 6px !important; 
+    margin-top: 5px !important;
     background-color: var(--cream) !important;
     color: var(--green) !important;
     border: none !important;
