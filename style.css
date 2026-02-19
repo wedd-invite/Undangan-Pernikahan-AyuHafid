@@ -128,8 +128,8 @@ body {
 
 /* 1. KOTAK HIJAU (40% TINGGI) */
 .hero-bottom-wrapper {
-    height: 40vh !important;
-    height: 40dvh !important;
+    height: 50vh !important;
+    height: 50dvh !important;
     flex: 0 0 auto !important; /* Jangan biarkan melar/menyusut */
     background-color: var(--green-dark); 
     width: 100%;
