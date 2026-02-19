@@ -80,8 +80,8 @@ body {
 
 /* 2. BAGIAN CREAM (60% ATAS) */
 .hero-content {
-    height: 60vh !important;
-    height: 60dvh !important;
+    height: 50vh !important;
+    height: 50dvh !important;
     flex: 0 0 auto !important; /* Jangan biarkan melar/menyusut */
     display: flex;
     align-items: center;
