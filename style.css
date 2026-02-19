@@ -118,95 +118,123 @@ body {
 }
 
 
-/* 4. BAGIAN HIJAU (40% BAWAH & DATAR) */
+/* =========================================
+   REVISI FINAL HERO BAWAH (PROPORSIOAL & ELEGAN)
+   ========================================= */
+
+/* 1. KOTAK HIJAU (40% TINGGI) */
 .hero-bottom-wrapper {
     height: 40vh !important;
-    height: 40dvh !important; /* Kunci proporsi 40% */
+    height: 40dvh !important; 
     background-color: var(--green-dark); 
     width: 100%;
     
-    /* Memastikan sudut tetap SIKU/DATAR (Tanpa lengkungan) */
+    /* Sudut Datar/Siku */
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
     
-    padding: 15px 20px !important; /* Padding disesuaikan */
+    padding: 20px 15px !important;
+    
+    /* FLEXBOX UTAMA: Mengatur isi agar terdistribusi rapi */
     display: flex;
     flex-direction: column;
-    justify-content: center !important; /* KUNCI: Mendorong isi ke tengah agar padat */
+    justify-content: center !important; /* Isi berada di tengah vertikal */
     align-items: center;
     text-align: center;
     z-index: 10;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.1); 
 }
 
-/* =========================================
-   REVISI FONT "THE WEDDING OF" (HURUF SAMBUNG ELEGANT)
-   ========================================= */
+/* 2. TEKS "THE WEDDING OF" (REVISI: SERIF TEGAK ELEGAN) */
 .the-wedding-text { 
-    font-family: var(--font-script) !important; /* Menggunakan font sambung Great Vibes */
-    font-size: 2.5rem !important; /* Diperbesar karena font sambung butuh ukuran lebih besar */
+    font-family: var(--font-heading) !important; /* Font Cormorant (Serif) */
+    font-size: 0.9rem !important; 
     color: var(--cream) !important; 
-    font-weight: normal !important; /* Huruf sambung lebih cantik jika tidak terlalu tebal */
+    font-weight: 600 !important;
     
-    /* KUNCI: Agar hurufnya benar-benar menyambung natural */
-    letter-spacing: 0 !important; 
-    text-transform: none !important; /* Mematikan efek huruf kapital semua */
+    /* KUNCI ELEGAN: Huruf kapital dengan spasi lebar */
+    text-transform: uppercase !important; 
+    letter-spacing: 4px !important; 
     
-    margin: 0 0 0 0 !important; /* Margin bawah dinolkan agar menempel manis dengan nama mempelai */
-    line-height: 1 !important;
+    margin: 0 0 5px 0 !important; /* Jarak ke nama mempelai */
+    opacity: 0.9 !important;
 }
 
-/* Sesuaikan ukuran khusus untuk layar HP */
-@media screen and (max-width: 600px) {
-    .the-wedding-text {
-        font-size: 2rem !important; /* Sedikit dikecilkan di HP agar proporsional */
-        margin: 0 0 -5px 0 !important; /* Ditarik sedikit ke bawah agar dekat dengan nama */
-    }
-}
-
+/* 3. NAMA MEMPELAI (AYU & HAFIDZ) */
 .nama-mempelai-hero {
-    font-size: clamp(4rem, 12vw, 7.5rem) !important; /* Font pas di dalam 40% */
-    margin: 0 0 5px 0 !important; /* Jarak bawah dipangkas habis */
+    font-family: var(--font-heading), serif;
+    /* Ukuran diatur agar pas di dalam kotak 40% (tidak terlalu raksasa sampai kepotong) */
+    font-size: clamp(3.5rem, 10vw, 5.5rem) !important; 
+    font-weight: 600;
+    font-style: italic;
+    color: var(--cream); 
     line-height: 1 !important;
-    color: var(--cream); font-family: var(--font-heading); font-weight: 600; font-style: italic;
+    margin: 0 0 10px 0 !important; /* Memberi jarak ke garis */
 }
 
+/* Simbol "&" Emas di tengah nama */
+.nama-mempelai-hero .dan-simbol-emas {
+    font-family: var(--font-script);
+    font-size: 0.8em !important; /* Sedikit lebih kecil dari huruf nama */
+    color: var(--gold-accent) !important;
+    font-weight: normal;
+}
+
+/* 4. GARIS PEMBATAS (DIVIDER) */
 .divider-solid {
-    margin: 0 auto 12px auto !important; /* Didekatkan ke teks atas & bawah */
-    width: 40%; max-width: 250px; border-top: 1px solid var(--cream); opacity: 0.8;
+    border: 0;
+    border-top: 1px solid var(--cream); 
+    opacity: 0.6; 
+    width: 60px !important; /* Garis dibuat pendek elegan */
+    margin: 0 auto 15px auto !important; /* Jarak ke Nama Tamu */
 }
 
+/* 5. KOTAK TAMU (KEPADA YTH) */
 .tamu-box-final {
-    margin: 0 auto 12px auto !important; /* Jarak bawah dipangkas */
-    padding: 0; background: transparent !important; border: none !important; 
+    width: 100%;
+    background: transparent !important; 
+    border: none !important; 
+    padding: 0; 
+    margin: 0 0 15px 0 !important; /* Jarak ke Tombol Buka */
 }
 
-.kepada-text { margin: 0 0 2px 0 !important; font-size: 0.8rem; color: var(--cream); opacity: 0.8; }
-.nama-tamu-final { margin: 2px 0 !important; font-size: 1.2rem; font-weight: 700; color: var(--cream); }
-.maaf-text { margin: 2px 0 0 0 !important; font-size: 0.6rem; color: var(--cream); opacity: 0.6; }
+.kepada-text { 
+    font-size: 0.75rem; color: var(--cream); opacity: 0.8; letter-spacing: 1px; margin-bottom: 2px;
+}
+.nama-tamu-final { 
+    font-family: var(--font-body); 
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    color: var(--cream); 
+    margin: 2px 0; 
+    text-transform: capitalize;
+}
+.maaf-text { 
+    display: none; /* Opsional: Kita sembunyikan teks "maaf salah nama" agar tampilan lebih bersih/elegan */
+}
 
+/* 6. TOMBOL BUKA UNDANGAN (MUNGIL) */
 button.btn-buka-final {
-    margin-top: 5px !important; /* Ditarik ke atas agar tidak renggang */
+    background-color: var(--cream) !important; 
+    color: var(--green) !important;
+    border: 1px solid var(--cream) !important;
+    padding: 10px 30px; 
+    border-radius: 50px;
+    font-size: 0.75rem; 
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+    margin-top: 5px !important;
 }
 
-
-/* =========================================
-   6. PENYESUAIAN KHUSUS LAYAR HP (MOBILE)
-   ========================================= */
+/* KHUSUS HP (MOBILE) - Agar Tetap Rapi */
 @media screen and (max-width: 600px) {
-    /* INISIAL HP LEBIH BESAR */
-    .inisial-box-final { width: 320px !important; height: 320px !important; }
-    .inisial-huruf { font-size: 11rem !important; }
-    
-    .huruf-a { transform: translate(-10px, -15px) !important; }
-    .huruf-h { transform: translate(10px, 15px) !important; }
-    .bunga-tulip { width: 100px !important; transform: translateY(5px) !important; }
-
-    /* NAMA & JARAK DI HP */
-    .nama-mempelai-hero { font-size: 3.5rem !important; margin-bottom: 5px !important; }
-    .hero-bottom-wrapper { padding: 10px 15px !important; }
-    .tamu-box-final { margin-bottom: 15px !important; }
+    .nama-mempelai-hero { font-size: 3.2rem !important; }
+    .the-wedding-text { font-size: 0.75rem !important; letter-spacing: 3px !important; }
+    .hero-bottom-wrapper { padding: 15px !important; }
+    .tamu-box-final { margin-bottom: 10px !important; }
 }
+
 /* =========================================
    REVISI HERO BAGIAN BAWAH (SAMPUL DEPAN)
    ========================================= */
