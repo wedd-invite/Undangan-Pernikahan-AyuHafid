@@ -1421,11 +1421,45 @@ section#closing .img-berdua {
     filter: drop-shadow(0 4px 4px rgba(91, 105, 70, 0.2)) !important;
 }
 
-/* 5. TEKS & FONT (TETAP KECIL / ZOOM-OUT) */
+/* 5. TEKS & FONT (DISERAGAMKAN DENGAN PAGE 1) */
 section#closing h2.font-aesthetic {
-    font-size: 1.5rem !important; 
+    font-size: 2rem !important; /* Diperbesar sedikit agar seimbang */
     margin-bottom: 5px !important;
     color: var(--green) !important;
 }
 
-section#closing .letter-spacing-small
+section#closing .letter-spacing-small {
+    font-size: 0.85rem !important; /* Disamakan dengan "The Wedding of" di Page 1 */
+    margin-bottom: 20px !important; 
+    opacity: 0.9 !important;
+}
+
+section#closing p.fst-italic {
+    font-size: 0.9rem !important; /* Disamakan dengan kutipan undangan di Page 1 */
+    width: 85% !important; 
+    max-width: 500px !important; /* Sedikit dilebarkan agar teks tidak terlalu turun */
+    margin: 0 auto 15px auto !important;
+    font-weight: 300 !important;
+    line-height: 1.6 !important;
+}
+
+section#closing p.fw-bold {
+    font-size: 0.85rem !important; /* Disamakan proporsinya */
+    width: 85% !important; 
+    max-width: 500px !important;
+    margin: 0 auto 30px auto !important; 
+    opacity: 0.8 !important;
+    font-weight: 500 !important;
+}
+
+/* 6. NAMA MEMPELAI (PERSIS DENGAN PAGE 1) */
+.nama-mempelai-footer {
+    font-family: var(--font-heading) !important;
+    font-size: clamp(2.2rem, 5vw, 3.2rem) !important; /* Sama persis dengan Page 1 */
+    margin-bottom: 20px !important;
+    line-height: 1.2 !important;
+}
+
+.nama-mempelai-footer .dan-simbol-emas {
+     font-size: clamp(2rem, 5vw, 2.8rem) !important; /* Sama persis dengan Page 1 */
+}
