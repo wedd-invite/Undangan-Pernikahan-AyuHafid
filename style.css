@@ -1709,7 +1709,7 @@ section#closing .img-berdua {
     background-color: var(--green) !important; /* Warna Hijau */
     
     /* Perintah dipisah satu per satu agar browser HP tidak bingung */
-    -webkit-mask-image: url('assets/ending.svg') !important;
+    -webkit-mask-image: url('assets/ending.png') !important;
     -webkit-mask-size: contain !important;
     -webkit-mask-repeat: no-repeat !important; /* KUNCI: Mencegah gambar muncul 2x */
     -webkit-mask-position: center !important;
