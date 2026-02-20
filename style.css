@@ -1703,8 +1703,8 @@ section#closing .img-berdua {
 
 /* 2. ORNAMEN SVG (ANTI-DOUBLE & PROPORSIONAL) */
 .icon-ending {
-    width: 180px !important; /* Ukuran dilebarkan */
-    height: 60px !important; /* Tinggi disesuaikan */
+    width: 280px !important; /* Ukuran dilebarkan */
+    height: 70px !important; /* Tinggi disesuaikan */
     
     background-color: var(--green) !important; /* Warna Hijau */
     
@@ -1713,11 +1713,6 @@ section#closing .img-berdua {
     -webkit-mask-size: contain !important;
     -webkit-mask-repeat: no-repeat !important; /* KUNCI: Mencegah gambar muncul 2x */
     -webkit-mask-position: center !important;
-    
-    mask-image: url('assets/ending.svg') !important;
-    mask-size: contain !important;
-    mask-repeat: no-repeat !important; /* KUNCI: Mencegah gambar muncul 2x */
-    mask-position: center !important;
 }
 
 /* 3. CONTAINER CREDIT (DENGAN JARAK BAWAH SUPER PANJANG) */
