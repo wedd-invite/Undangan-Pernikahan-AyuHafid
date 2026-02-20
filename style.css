@@ -1701,7 +1701,6 @@ section#closing .img-berdua {
     margin-bottom: 25px !important; /* Jarak menuju teks Music By */
 }
 
-/* 2. ORNAMEN SVG (ANTI-DOUBLE & PROPORSIONAL) */
 /* =========================================
    FOKUS 1 KODE SAJA (UKURAN BESAR & ANTI-DOUBLE)
    ========================================= */
@@ -1712,17 +1711,24 @@ section#closing .img-berdua {
     
     background-color: var(--green) !important; 
     
+    /* 1. Untuk Safari, Chrome, Edge, dll */
     -webkit-mask-image: url('assets/ending.png') !important;
     -webkit-mask-size: contain !important;
-    -webkit-mask-repeat: no-repeat !important; 
+    -webkit-mask-repeat: no-repeat !important; /* Kunci Anti-Double */
     -webkit-mask-position: center !important;
+
+    /* 2. Untuk Mozilla Firefox & Browser Standar Lainnya */
+    mask-image: url('assets/ending.png') !important;
+    mask-size: contain !important;
+    mask-repeat: no-repeat !important; /* Kunci Anti-Double */
+    mask-position: center !important;
 }
 
-/* Penyesuaian khusus layar HP agar tidak terpotong ke samping */
+/* Penyesuaian khusus layar HP */
 @media screen and (max-width: 600px) {
     .icon-ending {
-        width: 220px !important; 
-        height: 55px !important;
+        width: 3000px !important; /* Sekarang ukuran ini tidak akan ditimpa lagi */
+        height: 70px !important;
     }
 }
 
@@ -1777,11 +1783,6 @@ section#closing .img-berdua {
    PENYESUAIAN KHUSUS HP (MOBILE)
    ========================================= */
 @media screen and (max-width: 600px) {
-    .icon-ending {
-        width: 140px !important; 
-        height: 50px !important;
-    }
-    
     .footer-credit {
         /* Jarak kosong bawah diperpanjang lagi di HP agar saat 
            di-scroll mentok, teksnya posisinya ada di tengah layar */
